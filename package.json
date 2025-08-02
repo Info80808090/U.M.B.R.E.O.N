@@ -9,7 +9,6 @@
     "node-fetch": "^2.7.0",
     "path": "^0.12.7",
     "prompt-sync": "^4.2.0",
-    "puppeteer": "^24.15.0",
     "unshorten": "^0.0.2",
     "uuid": "^11.1.0",
     "website-scraper": "^4.2.3"
