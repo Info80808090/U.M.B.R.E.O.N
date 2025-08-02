@@ -15,11 +15,11 @@ A Simple Client
 
 1. Clone this repository:
    ```
-   git clone https://github.com/Info80808090/U.M.B.R.E.O.N
+   git clone https://github.com/Info80808090/Umbreon-js
    ```
 2. Navigate to the project directory:
    ```
-   cd U.M.B.R.E.O.N
+   cd Umbreon-js
    ```
 
 2. Install dependencies:
