@@ -9,14 +9,14 @@ import tinygradient from 'tinygradient';
 const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const loadingSteps = [
-  '🔌 Menghubungkan ke server U.M.B.R.E.O.N Network...',
-  '📡 Autentikasi koneksi...',
-  '🔌 Menghubungkan ke server Glaceeons_ Network...',
-  '🧠 Memuat fitur...',
-  '📦 Mengekstrak komponen internal...',
-  '📁 Sinkronisasi direktori /commands...',
-  '⚙️ Menyiapkan environment Termux / Windows...',
-  '🌀 Menginisialisasi Engine...'
+  'Menghubungkan ke server U.M.B.R.E.O.N Network...',
+  'Autentikasi koneksi...',
+  'Menghubungkan ke server Glaceeons_ Network...',
+  'Memuat fitur...',
+  'Mengekstrak komponen internal...',
+  'Sinkronisasi direktori /commands...',
+  '⚙Menyiapkan environment Termux / Windows...',
+  'Menginisialisasi Engine...'
 ];
 
 const printTitle = async () => {
@@ -69,7 +69,7 @@ const loadCommands = () => {
 };
 
 const showMenu = async () => {
-  console.log(chalk.yellow.bold("List Fitur :\n"))
+  console.log(chalk.yellow.bold("\n\nList Fitur :\n"))
   const commandList = loadCommands();
   const menuOptions = commandList.map((cmd, index) => ({
     name: chalk.cyanBright(`${index + 1}. `) + chalk.white(cmd.name),
@@ -129,3 +129,4 @@ const main = async () => {
 };
 
 main();
+
