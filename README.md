@@ -24,7 +24,7 @@ A Simple Client
 
 2. Install dependencies:
    ```
-   npm install inquirer@latest figlet path ora tinygradient boxen archiver chalk require cheerio fs fs-extra node-fetch website-scraper prompt-sync uuid unshorten
+   npm install inquirer@latest figlet path ora tinygradient boxen archiver chalk require cheerio fs fs-extra node-fetch website-scraper prompt-sync uuid unshorten form-data axios
    ```
 
 3. Run the application:
@@ -33,4 +33,4 @@ A Simple Client
    ```
    
 ## Developers
-![image alt](https://raw.githubusercontent.com/Info80808090/Assets/refs/heads/main/20250802_225416.png)
+![image alt](https://github.com/Info80808090/Assets/blob/main/20250803_075106.png)
