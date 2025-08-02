@@ -1,4 +1,4 @@
-# U.M.B.R.E.O.N
+# U.M.B.R.E.O.N Project
 
 A Simple Client
 
@@ -32,6 +32,5 @@ A Simple Client
    node index.js
    ```
    
-## Credits
-- Kachi
-- Glacebyte
+## Developers
+![image alt](https://raw.githubusercontent.com/Info80808090/Assets/refs/heads/main/20250802_225416.png)
