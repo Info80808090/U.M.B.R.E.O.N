@@ -21,6 +21,7 @@ A Simple Client
 1. Navigate to root ( Termux Only )
    ```
    cd ~/
+   ```
 
 2. Clone this repository:
    ```
