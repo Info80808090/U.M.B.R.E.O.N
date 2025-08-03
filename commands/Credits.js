@@ -6,13 +6,13 @@ const developers = [
     name: 'Kachi-Kyoshiki',
     discord: 'always_kachi',
     whatsapp: 'N/a',
-    github: 'hhttps://github.com/Info80808090/',
+    github: 'https://github.com/Info80808090/',
   },
   {
     name: 'Glace Byte',
     discord: 'glacebyte',
     whatsapp: 'N/a',
-    github: 'N/a',
+    github: 'https://github.com/glacebyte/',
   },
 ];
 
@@ -37,3 +37,4 @@ export default async function credits() {
     }
   ]);
 }
+
