@@ -7,9 +7,13 @@ A Simple Client
 ## Features
 
 - Web Cloner
-- Password generator
+- Password Gen
 - Pokemon Search
 - Tiny Url
+- Grow A Garden Stock Checker
+- Grow A Garden Crafting Recipes
+- Spotify Play
+- Roblox Stalker
 
 
 ## Installation Guide :D
