@@ -1,63 +1,37 @@
-import inquirer from 'inquirer';
-import chalk from 'chalk';
 import axios from 'axios';
+import promptSync from 'prompt-sync';
+import chalk from 'chalk';
+import clipboard from 'clipboardy'; // <- Import clipboardy
 
-const url = 'https://gagstock.gleeze.com/grow-a-garden';
+const prompt = promptSync();
+const log = console.log;
 
-const kategoriMap = {
-  'Seed': 'seed',
-  'Gear': 'gear',
-  'Egg': 'pet',
-  'Cosmetic': 'cosmetic'
-};
+export default async function () {
+  log(chalk.cyanBright.bold('╔══════════════════════════════════════════╗'));
+  log(chalk.cyanBright.bold('║            🌐 Web HTML Viewer            ║'));
+  log(chalk.cyanBright.bold('╚══════════════════════════════════════════╝'));
 
-const tampilkanStok = async (kategori) => {
-  try {
-    const { data } = await axios.get(url);
-    const kategoriKey = kategoriMap[kategori];
+  const url = prompt(chalk.yellowBright('🔗 Masukkan URL website target: '));
 
-    if (!data[kategoriKey] || data[kategoriKey].length === 0) {
-      console.log(chalk.red(`❌ Tidak ditemukan stok untuk kategori ${kategori}.`));
-      return;
-    }
-
-    console.log(chalk.greenBright(`\n📦 Daftar Stok ${kategori}:\n`));
-    data[kategoriKey].forEach((item, index) => {
-      console.log(chalk.yellow(`${index + 1}. ${item}`));
-    });
-    console.log();
-  } catch (err) {
-    console.log(chalk.red('❌ Gagal mengambil data stok:', err.message));
+  if (!url || !url.startsWith('http')) {
+    log(chalk.redBright('❌ URL tidak valid. Harus diawali dengan http:// atau https://'));
+    return;
   }
-};
 
-export default async function cekStok() {
-  console.clear();
-  console.log(chalk.blueBright.bold('💠 CEK STOK GROW A GARDEN 💠\n'));
+  try {
+    log(chalk.blueBright(`📡 Mengambil HTML dari: ${chalk.underline(url)}\n`));
+    const response = await axios.get(url);
+    const html = response.data;
 
-  const { kategori } = await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'kategori',
-      message: 'Pilih kategori yang ingin dicek:',
-      choices: Object.keys(kategoriMap).concat(['Kembali']),
-    }
-  ]);
+    log(chalk.gray('────────────────────────────────────────────'));
+    log(chalk.white(html));
+    log(chalk.gray('\n────────────────────────────────────────────'));
 
-  if (kategori === 'Kembali') return;
+    // ⏬ Salin ke clipboard otomatis
+    await clipboard.write(html);
+    log(chalk.greenBright('\n✅ HTML berhasil ditampilkan & disalin ke clipboard!'));
 
-  await tampilkanStok(kategori);
-
-  const { kembali } = await inquirer.prompt([
-    {
-      type: 'confirm',
-      name: 'kembali',
-      message: 'Ingin cek kategori lain?',
-      default: true
-    }
-  ]);
-
-  if (kembali) {
-    await cekStok(); // rekursif
+  } catch (error) {
+    log(chalk.redBright('❌ Gagal mengambil HTML:'), chalk.gray(error.message));
   }
 }
